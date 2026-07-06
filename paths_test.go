@@ -5,7 +5,7 @@
 package rails
 
 import (
-	"path/filepath"
+	"path"
 	"reflect"
 	"testing"
 )
@@ -44,13 +44,13 @@ func TestPathExpandedAbsoluteAndRelative(t *testing.T) {
 	r := NewPathsRoot("/app")
 	p := r.Add("mixed", PathOpts{With: []string{"lib", "/abs/path"}})
 	got := p.Expanded()
-	want := []string{filepath.Join("/app", "lib"), "/abs/path"}
+	want := []string{path.Join("/app", "lib"), "/abs/path"}
 	if !reflect.DeepEqual(got, want) {
 		t.Fatalf("expanded wrong: %v want %v", got, want)
 	}
 	// SetRoot repoints expansion.
 	r.SetRoot("/other")
-	if p.Expanded()[0] != filepath.Join("/other", "lib") {
+	if p.Expanded()[0] != path.Join("/other", "lib") {
 		t.Fatalf("SetRoot should repoint expansion, got %v", p.Expanded())
 	}
 }
@@ -79,7 +79,7 @@ func TestPathsRootAggregators(t *testing.T) {
 	r.Add("lib", PathOpts{AutoloadOnce: true, LoadPath: true})
 	r.Add("config", PathOpts{}) // classified nowhere
 
-	j := func(p string) string { return filepath.Join("/app", p) }
+	j := func(p string) string { return path.Join("/app", p) }
 	if got := r.AutoloadPaths(); !reflect.DeepEqual(got, []string{j("app/models"), j("app/mailers")}) {
 		t.Fatalf("autoload_paths wrong: %v", got)
 	}

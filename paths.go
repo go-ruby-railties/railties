@@ -4,7 +4,7 @@
 
 package rails
 
-import "path/filepath"
+import "path"
 
 // PathOpts are the options accepted by PathsRoot.Add, mirroring the keyword
 // arguments of Rails::Paths::Root#add (with:, eager_load:, autoload:,
@@ -85,10 +85,10 @@ func (p *Path) To() []string { return append([]string(nil), p.paths...) }
 func (p *Path) Expanded() []string {
 	out := make([]string, 0, len(p.paths))
 	for _, sp := range p.paths {
-		if filepath.IsAbs(sp) {
+		if path.IsAbs(sp) {
 			out = append(out, sp)
 		} else {
-			out = append(out, filepath.Join(p.root.root, sp))
+			out = append(out, path.Join(p.root.root, sp))
 		}
 	}
 	return out
