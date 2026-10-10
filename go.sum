@@ -4,3 +4,5 @@ github.com/go-ruby-activesupport/activesupport v0.0.0-20260820071506-344413ecaa5
 github.com/go-ruby-activesupport/activesupport v0.0.0-20260820071506-344413ecaa5f/go.mod h1:ykSisArfgmpZFoV0y0irolshuOdSPyALFz/wWCJiaEE=
 github.com/go-ruby-activesupport/activesupport v0.0.0-20260916090626-10f09966f037 h1:GZDluekMWuN22PJu4FaLktJQJt1jsJwvM0kQ0QeBJd4=
 github.com/go-ruby-activesupport/activesupport v0.0.0-20260916090626-10f09966f037/go.mod h1:ykSisArfgmpZFoV0y0irolshuOdSPyALFz/wWCJiaEE=
+github.com/go-ruby-activesupport/activesupport v0.0.0-20261010102820-3ef4fda78f1a h1:ZRlkiGCYdCuX7vjYraJ6haCklz4dzpjT8mVqLA1oLrA=
+github.com/go-ruby-activesupport/activesupport v0.0.0-20261010102820-3ef4fda78f1a/go.mod h1:KYWCoN1P0k67BKcdEYFJFm6ZbyLloWb9f3QSL/iICg8=
